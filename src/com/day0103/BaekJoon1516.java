@@ -3,10 +3,7 @@ package com.day0103;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.ArrayDeque;
-import java.util.Arrays;
-import java.util.Queue;
-import java.util.StringTokenizer;
+import java.util.*;
 
 // 게임 개발
 public class BaekJoon1516 {
@@ -57,19 +54,21 @@ public class BaekJoon1516 {
     }
 
     private static void TopologySort() {
-        Queue<Integer> queue = new ArrayDeque<>();
+        PriorityQueue<Integer> queue = new PriorityQueue<>((e1, e2) -> {
+            return times[e1] - times[e2];
+        });
         for (int i = 1; i <= N; i++) {
             if (inDegree[i] == 0) {
+                build[i] = times[i];
                 queue.offer(i);
             }
         }
         while (!queue.isEmpty()) {
             int cur = queue.poll();
-            build[cur] += times[cur];
 
             for (Node temp = adjList[cur]; temp != null; temp = temp.to) {
+                build[temp.vertex] = Math.max(build[temp.vertex], build[cur] + times[temp.vertex]);
                 if (--inDegree[temp.vertex] == 0) {
-                    build[temp.vertex] += build[cur];
                     queue.offer(temp.vertex);
                 }
             }

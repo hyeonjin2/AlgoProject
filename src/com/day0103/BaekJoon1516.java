@@ -43,8 +43,6 @@ public class BaekJoon1516 {
                 to = Integer.parseInt(st.nextToken());
             }
         }
-//        System.out.println(Arrays.toString(times));
-//        System.out.println(Arrays.toString(inDegree));
         TopologySort();
         StringBuilder sb = new StringBuilder();
         for (int i = 1; i <= N; i++) {
@@ -75,10 +73,3 @@ public class BaekJoon1516 {
         }
     }
 }
-/*
-4
-20 -1
-10 -1
-1 1 2 -1
-1000 1 2 3 -1
- */

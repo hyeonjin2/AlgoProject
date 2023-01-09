@@ -15,17 +15,20 @@ public class BaekJoon1655 {
         for (int i = 0; i < N; i++) {
             nums[i] = Integer.parseInt(br.readLine());
         }
-        int[] parents = new int[N];
+
         // subset
+        int[] parents = new int[N];
         for (int i = 0; i < N; i++) {
             parents[i] = nums[i];
         }
 
+        StringBuilder sb = new StringBuilder();
         int ind = 0;
         for (int i = 1; i < N; i++) {
             if (nums[ind] > nums[i]) {
 //                parents[ind]
             }
         }
+        System.out.println(sb);
     }
 }

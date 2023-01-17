@@ -1,4 +1,4 @@
-package com.day0115;
+package com.day0116;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,7 +17,9 @@ public class BaekJoon1967 {
     }
   }
 
-  static int ans;
+  static int max;
+  static int index;
+
   static boolean[] visited;
   static Node[] adjList;
 
@@ -36,18 +38,25 @@ public class BaekJoon1967 {
       int to = Integer.parseInt(st.nextToken());
       int weight = Integer.parseInt(st.nextToken());
       adjList[from] = new Node(to, weight, adjList[from]);
+      adjList[to] = new Node(from, weight, adjList[to]);
     }
     // 노드 별로 최대 길이 구하기 -> DFS
-    for (int i = 1; i <= n; i++) {
-      visited = new boolean[n + 1];
-      dfs(i, 0);
-    }
-    System.out.println(ans);
+    visited = new boolean[n + 1];
+    dfs(1, 0);
+
+    // 가중치가 최대인 노드로 max 값 구하기
+    visited = new boolean[n + 1];
+    dfs(index, 0);
+
+    System.out.println(max);
   }
 
   private static void dfs(int cur, int length) {
     visited[cur] = true;
-    ans = Math.max(ans, length);
+    max = Math.max(max, length);
+    if (max == length) {
+      index = cur;
+    }
     for (Node temp = adjList[cur]; temp != null; temp = temp.next) {
       if (!visited[temp.vertex]) {
         dfs(temp.vertex, length + temp.weight);

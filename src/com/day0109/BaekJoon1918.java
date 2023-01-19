@@ -24,8 +24,11 @@ public class BaekJoon1918 {
       }
       // 연산자이면 stack에 저장
       else if (ch == '+' || ch == '-' || ch == '*' || ch == '/') {
-        if (!stack.isEmpty() && bracket == 0 && (stack.peek() == '/' || stack.peek() == '*')) {
+        if (!stack.isEmpty() && (stack.peek() == '/' || stack.peek() == '*')) {
           if (ch == '+' || ch == '-') {
+            if (i - 2 > 0 && str.charAt(i - 2) == '(') {
+              continue;
+            }
             while (!stack.isEmpty()) {
               char op = stack.pop();
               sb.append(op);

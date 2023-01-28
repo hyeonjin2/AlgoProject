@@ -1,11 +1,11 @@
-package com.year2023.day0116;
+package com.year2023.month01.day0116;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class BaekJoon1167 {
+public class BaekJoon1967 {
   public static class Node {
     int vertex, weight;
     Node next;
@@ -39,13 +39,6 @@ public class BaekJoon1167 {
       int weight = Integer.parseInt(st.nextToken());
       adjList[from] = new Node(to, weight, adjList[from]);
       adjList[to] = new Node(from, weight, adjList[to]);
-      to = Integer.parseInt(st.nextToken());
-      while (to != -1) {
-        weight = Integer.parseInt(st.nextToken());
-        adjList[from] = new Node(to, weight, adjList[from]);
-        adjList[to] = new Node(from, weight, adjList[to]);
-        to = Integer.parseInt(st.nextToken());
-      }
     }
     // 노드 별로 최대 길이 구하기 -> DFS
     visited = new boolean[n + 1];

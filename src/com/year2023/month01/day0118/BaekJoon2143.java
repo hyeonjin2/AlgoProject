@@ -1,4 +1,4 @@
-package com.year2023.day0118;
+package com.year2023.month01.day0118;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

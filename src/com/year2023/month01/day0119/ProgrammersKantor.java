@@ -1,4 +1,4 @@
-package com.year2023.day0119;
+package com.year2023.month01.day0119;
 
 // 유사 칸토어 비트열
 public class ProgrammersKantor {

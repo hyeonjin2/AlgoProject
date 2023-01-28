@@ -1,4 +1,4 @@
-package com.year2023.day0116;
+package com.year2023.month01.day0116;
 
 import java.util.Scanner;
 

@@ -1,4 +1,4 @@
-package com.year2023.day0114;
+package com.year2023.month01.day0114;
 
 import java.io.IOException;
 import java.util.*;

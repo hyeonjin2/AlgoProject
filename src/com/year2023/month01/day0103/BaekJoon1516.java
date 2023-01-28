@@ -1,4 +1,4 @@
-package com.year2023.day0103;
+package com.year2023.month01.day0103;
 
 import java.io.BufferedReader;
 import java.io.IOException;

@@ -10,11 +10,12 @@ import java.util.List;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class BaekJoon16929 {
+// 뱀과 사다리 게임
+public class BaekJoon16928 {
 
 	static int N, M, answer;
 
-	// ��ٸ�, �� ������ ���� �迭 (�ϳ��� ĭ�� ��ٸ��� ���� ���ÿ� ���� �� �����Ƿ� �ϳ��� �迭�� ����
+	// 사다리, 뱀 정보를 담을 배열 (하나의 칸이 사다리와 뱀을 동시에 가질 수 없으므로 하나의 배열로 관리
 	static List<Point> move;
 
 	public static void main(String[] args) throws IOException {
@@ -26,7 +27,7 @@ public class BaekJoon16929 {
 
 		move = new ArrayList<>();
 
-		// ��ٸ� ���� ����
+		// 사다리 정보 저장
 		for (int i = 0; i < N + M; i++) {
 			st = new StringTokenizer(br.readLine());
 			int x = Integer.parseInt(st.nextToken());
@@ -64,9 +65,9 @@ public class BaekJoon16929 {
 					queue.offer(new Point(next, count + 1));
 					break;
 				}
-				// ��ٸ� �Ǵ� ���� �ִ� ĭ�� �����ߴ��� Ȯ��
+				// 사다리 또는 뱀이 있는 칸에 도착했는지 확인
 				for (Point p : move) {
-					// ��ٸ� �Ǵ� ���� �ִ� ĭ�̶�� �̵�
+					// 사다리 또는 뱀이 있는 칸이라면 이동
 					if (next == p.x) {
 						next = p.y;
 					}

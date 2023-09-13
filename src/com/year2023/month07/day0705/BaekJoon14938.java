@@ -7,7 +7,7 @@ import java.util.Arrays;
 import java.util.PriorityQueue;
 import java.util.StringTokenizer;
 
-// �����׶���
+// 서강그라운드
 public class BaekJoon14938 {
 
 	static class Node {
@@ -38,7 +38,7 @@ public class BaekJoon14938 {
 	}
 
 	static int N, M, R;
-	static int[] item; // ������ ��
+	static int[] item; // 아이템 수
 	static Node[] adjList;
 
 	public static void main(String[] args) throws IOException {
@@ -56,7 +56,7 @@ public class BaekJoon14938 {
 			item[i] = Integer.parseInt(st.nextToken());
 		}
 
-		// ��������Ʈ �ʱ�ȭ
+		// 인접리스트 초기화
 		adjList = new Node[N + 1];
 
 		for (int i = 0; i < R; i++) {
@@ -83,12 +83,12 @@ public class BaekJoon14938 {
 		PriorityQueue<Vertex> pq = new PriorityQueue<>();
 		pq.offer(new Vertex(start, 0));
 
-		boolean[] visited = new boolean[N + 1]; // �湮üũ �迭
-		int[] D = new int[N + 1]; // �ִܰŸ��� ������ �迭
+		boolean[] visited = new boolean[N + 1]; // 방문체크 배열
+		int[] D = new int[N + 1]; // 최단거리를 저장할 배열
 
 		Arrays.fill(D, Integer.MAX_VALUE);
 
-		// ��� ���� ó��
+		// 출발 정점 처리
 		D[start] = 0;
 
 		while (!pq.isEmpty()) {

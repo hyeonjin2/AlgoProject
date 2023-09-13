@@ -2,7 +2,7 @@ package com.year2023.month08.day0824;
 
 import java.util.Scanner;
 
-// �ұ� ��ź
+// 소금 폭탄
 public class BaekJoon13223 {
 
 	public static void main(String[] args) {
@@ -26,11 +26,11 @@ public class BaekJoon13223 {
 				int calc;
 
 				if (tar < cur && i > 0) {
-					// ���ڸ� 1����
+					// 앞자리 1빼기
 					int temp = Integer.parseInt(tarTime[i - 1]) - 1;
 					tarTime[i - 1] = String.valueOf(temp);
 
-					// 60���ϱ�
+					// 60더하기
 					calc = tar + 60 - cur;
 				} else if (tar < cur && i == 0) {
 

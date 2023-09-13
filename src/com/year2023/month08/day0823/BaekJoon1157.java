@@ -2,7 +2,7 @@ package com.year2023.month08.day0823;
 
 import java.util.Scanner;
 
-// �ܾ� ����
+// 단어 공부
 public class BaekJoon1157 {
 
 	public static void main(String[] args) {

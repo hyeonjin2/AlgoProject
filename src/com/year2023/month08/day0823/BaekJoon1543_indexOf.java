@@ -2,6 +2,7 @@ package com.year2023.month08.day0823;
 
 import java.util.Scanner;
 
+// 문서 검색
 public class BaekJoon1543_indexOf {
 
 	public static void main(String[] args) {

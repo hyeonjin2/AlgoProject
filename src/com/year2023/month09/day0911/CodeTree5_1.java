@@ -11,7 +11,7 @@ public class CodeTree5_1 {
 
 		int[] d = new int[50];
 
-		// n = 1, n = 2 �� �� �ʱ�ȭ
+		// n = 1, n = 2 일 때 초기화
 		d[1] = 1;
 		d[2] = 1;
 

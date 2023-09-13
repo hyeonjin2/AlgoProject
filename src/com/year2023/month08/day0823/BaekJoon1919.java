@@ -2,7 +2,7 @@ package com.year2023.month08.day0823;
 
 import java.util.Scanner;
 
-// �ֳʱ׷� �����
+// 애너그램 만들기
 public class BaekJoon1919 {
 
 	public static void main(String[] args) {

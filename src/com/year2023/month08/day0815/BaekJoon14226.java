@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 import java.util.Scanner;
 
-// �̸�Ƽ��
+// 이모티콘
 public class BaekJoon14226 {
 
 	static class Emoticon {
@@ -41,16 +41,16 @@ public class BaekJoon14226 {
 				return;
 			}
 
-			// 1. ȭ�鿡 �ִ� �̸�Ƽ���� ��� �����ؼ� Ŭ�����忡 �����Ѵ�.
+			// 1. 화면에 있는 이모티콘을 모두 복사해서 클립보드에 저장한다.
 			queue.offer(new Emoticon(cur.screen, cur.screen, cur.time + 1));
 
-			// 2. Ŭ�����忡 �ִ� ��� �̸�Ƽ���� ȭ�鿡 �ٿ��ֱ� �Ѵ�.
+			// 2. 클립보드에 있는 모든 이모티콘을 화면에 붙여넣기 한다.
 			if (cur.clip != 0 && cur.screen + cur.clip <= end && !visited[cur.clip][cur.screen + cur.clip]) {
 				queue.offer(new Emoticon(cur.screen + cur.clip, cur.clip, cur.time + 1));
 				visited[cur.clip][cur.screen + cur.clip] = true;
 			}
 
-			// 3. ȭ�鿡 �ִ� �̸�Ƽ�� �� �ϳ��� �����Ѵ�.
+			// 3. 화면에 있는 이모티콘 중 하나를 삭제한다.
 			if (cur.screen > 0 && !visited[cur.clip][cur.screen - 1]) {
 				queue.offer(new Emoticon(cur.screen - 1, cur.clip, cur.time + 1));
 				visited[cur.clip][cur.screen - 1] = true;
